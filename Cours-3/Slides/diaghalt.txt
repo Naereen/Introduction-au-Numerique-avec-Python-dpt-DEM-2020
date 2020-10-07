@@ -1,0 +1,6 @@
+# syntaxe à la Python
+programme diagonale(x):
+    si halt(x, x) = "Oui":
+        boucle infinie
+    sinon:
+        renvoyer "Non"
