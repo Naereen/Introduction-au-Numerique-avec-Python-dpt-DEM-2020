@@ -1,0 +1,204 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+%\usepackage{array}
+% \defaultfontfeatures{Mapping=tex-text}
+% \setromanfont[Mapping=tex-text]{Hoefler Text}
+% \setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+% \setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\newcommand{\prog}[1]{\texttt{#1}}
+
+\title{DEM-1 -- Introduction au Numérique\\
+Questionnaire d'auto-évaluation}
+% \author{Auto-évaluation}
+\date{16 octobre 2020}  % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+
+\section{Votre nom et votre prénom}
+\begin{center}
+\begin{tabular}{| p{4cm} | p{4cm} | p{5cm} |}
+\hline
+Prénom & Nom & mél\\
+\hline
+~&&\\
+\hline
+\end{tabular}
+\end{center}
+Merci de m'indiquer le nombre de cours que vous avez
+"ratés" :
+\begin{center}
+\begin{tabular}{| p{7cm} | p{1cm} |}
+\hline
+Nombre de cours ratés : & \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Méthode}
+
+\newcommand{\pyth}{{\sc Python}}
+
+L'auto-évaluation est faite de la façon suivante :
+\begin{itemize}
+\item Donnez-vous une première note entre 0 et 20, selon la grille d'évaluation
+qui vous est donnée dans la section~\ref{note1}
+\item Expliquez les raisons (en quelques lignes) de cette évaluation.
+\item Répondez avec honnêteté au questionnaire
+de la section~\ref{note2}. Vous mettez 1 à une question si vous
+estimez avoir la compétence correspondante, 0 sinon, 1/2 si vous n'êtes pas sûr-e.\\
+(NB : il ne vous est \textbf{pas} demandé de justifier vos réponses !)
+\item Totaliser et rapporter la note obtenue
+\item Répondre au questionnaire d'évaluation du cours de la section~\ref{eval}.
+\end{itemize}
+
+\newpage
+
+\section{Votre première note}
+\label{note1}
+
+\begin{center}
+\begin{tabular}{| c | p{12cm} |}
+\hline
+Note & Signification\\
+\hline
+18 & Je suis parfaitement à l'aise, et j'aurais pu effectuer tous les exemples de programmation sans difficulté\\
+\hline
+16 & J'aurais pu effectuer tous les exemples proposés, à condition d'y passer quelque
+temps\\
+\hline
+14 & J'ai bien compris les notions essentielles, je peux refaire des exemples de programmation
+similaires\\
+\hline
+12 & J'ai assez bien compris les notions présentées, je peux refaire les exem\-ples les plus
+simples\\
+\hline
+10 & Je n'ai compris qu'une partie de ce qui a été présenté en cours\\
+\hline
+8 & Je n'ai pas compris les exemples présentés, et je ne serais pas capable
+de les refaire\\
+\hline
+6 & Je ne sais pas comment écrire un tout petit programme avec \pyth{} ni
+comment l'exécuter\\
+\hline
+4 & Je ne sais pas comment ouvrir un terminal sur mon ordinateur personnel\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{| p{7cm} | p{1cm} |}
+\hline
+La note que vous vous donnez : & \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{| p{14cm} |}
+\hline
+Commentaire\\
+\hline
+~\\
+\vspace{3cm}
+\\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Le questionnaire}
+\label{note2}
+\begin{enumerate}
+\item $\Box$ Savez-vous vous connecter à votre ordinateur et lancer le terminal ?
+\item $\Box$ Savez-vous ce qu'est un répertoire ? Savez-vous trouver dans quel répertoire vous êtes lorsque vous avez
+lancé le terminal ?
+\item $\Box$ Savez-vous lister les fichiers du répertoire courant à partir du terminal ?
+\item $\Box$ Pouvez-vous indiquer le type des principaux fichiers qui sont dans votre répertoire ?
+\item $\Box$ Savez-vous comment créer un nouveau répertoire à partir du terminal ?
+\item $\Box$ Savez-vous comment vous déplacer d'un répertoire à l'autre à partir du terminal ?
+\item $\Box$ Savez-vous déplacer ou détruire un fichier à partir du terminal ?
+\item $\Box$ Savez-vous lancer le programme \pyth{} (\prog{python}) ?
+\item $\Box$ Connaissez-vous la différence entre un interpréteur et un compilateur ?
+\item $\Box$ Pouvez-vous écrire un petit programme \pyth{} à qui on donne deux nombres (avec \prog{input}) et qui en affiche la somme ?
+\item $\Box$ Avez-vous compris ce qu'est une \emph{condition} ?
+\item $\Box$ Avez-vous compris ce qu'est une \emph{expression booléenne}, et savez vous
+écrire de telles expressions (lorsqu'elles sont simples) ?
+\item $\Box$ Avez-vous compris ce qu'est un \emph{bloc} dans un programme \pyth{} ?
+\item $\Box$ Avez-vous compris ce qu'est une \emph{fonction} ?
+\item $\Box$ Savez-vous ce qu'est une \emph{liste}, comment accéder à ses éléments, à des sous-listes, à en modifier un élément ?
+\item $\Box$ Sauriez-vous expliquer l'algorithme permettant de ranger des crêpes (sans le programmer) ?
+\item $\Box$ Sauriez-vous expliquer comment l'on a choisi de représenter une pile de crêpe en \pyth{}
+\item $\Box$ Pouvez-vous écrire un petit programme qui lit un texte (avec \prog{input}), et compte son nombre de voyelles ?
+\item $\Box$ Avez-vous compris ce qu'est une librairie et à quoi cela sert ?
+\item $\Box$ Avez-vous compris les relations -- similitudes, différences -- qui existent entre un langage informatique et une
+langue naturelle ?
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{| p{3cm} | p{1cm} |}
+\hline
+Total& \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{\'Evaluation du cours}
+\label{eval}
+
+Ce petit questionnaire est destiné à améliorer le cours.\\
+(Entourez la réponse que vous choisissez.)
+
+\begin{center}
+\begin{tabular}{| p{5cm} | p{3cm} | p{3cm} | p{3cm} |}
+\hline
+\textbf{Question} & & & \\
+\hline
+La progression du cours est & convenable & trop rapide & trop lente\\
+\hline
+Le contenu du cours est & utile & inutile & pas d'avis \\
+\hline
+L'initiation à un langage de programmation est & utile & inutile & pas d'avis \\
+\hline
+Retransmettre le cours sur BigBlueButton était & utile & inutile & pas d'avis \\
+\hline
+Les "petites histoires" vous semblent & intéressantes & inintéressantes & pas d'avis \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{| p{15cm} |}
+\hline
+Commentaire (améliorations possibles pour l'an prochain !)\\
+\hline
+~\\
+\vspace{8cm}
+\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\end{document}
