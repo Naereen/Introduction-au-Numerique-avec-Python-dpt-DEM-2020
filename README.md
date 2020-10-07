@@ -29,7 +29,7 @@ je vous demande d'**installer Python sur votre machine personnelle :**
 - CM2 : [slides](2020-DEM-Cours-2.pdf)
 - « Petite histoire » CM2 : **Grace Hopper**, amirale de l'armée des USA et conceptrice du premier compilateur
 
-### CM3 : boucle `while`, chaîne de caractères
+### CM3 : boucle `while`, chaîne de caractères
 
 - CM3 : [slides](2020-DEM-Cours-3.pdf) - suivi par ~17 élèves en distanciel via BigBlueButton
 - « Petite histoire » CM1 : **Alan Turing**, héros de guerre et un des fondateurs de l'informatique théorique (ils et elles ont adoré, certain-e-s le connaissait déjà pour le film The Imitation Game sorti en 2014, mais personne ne connaissait ses autres
