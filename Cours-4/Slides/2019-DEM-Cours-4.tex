@@ -1,0 +1,303 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+
+\mode<presentation>
+{% AnnArbor
+%\usetheme{AnnArbor}
+  %\usetheme{Boadilla}
+  \usetheme{CambridgeUS}
+ %\usetheme{Madrid}
+  \setbeamercovered{transparent}
+}
+
+\usepackage{fontspec,xltxtra,xunicode,moreverb}
+
+\usepackage[french]{babel}
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+
+%% No navigation symbol.
+\setbeamertemplate{navigation symbols}{}
+\beamertemplatenavigationsymbolsempty
+
+%\setbeameroption{hide notes}
+
+%\newcommand{\mypause}{\pause}
+\newcommand{\mypause}{~}
+
+\newcommand{\elvrm}{\rm}
+\newcommand{\fivrm}{\rm}
+\newcommand{\sixrm}{\rm}
+\newcommand{\sevrm}{\rm}
+\newcommand{\egtrm}{\rm}
+\newcommand{\ninrm}{\rm}
+\newcommand{\tenrm}{\rm}
+\newcommand{\twlrm}{\rm}
+\newcommand{\frtnrm}{\rm}
+\newcommand{\svtnrm}{\rm}
+\newcommand{\twtyrm}{\rm}
+\newcommand{\twfvrm}{\rm}
+
+\newcommand{\ex}{{\bf Exemple}}
+\newcommand{\afor}{\bf for}
+\newcommand{\ato}{\bf to}
+\newcommand{\ado}{\bf do}
+\newcommand{\aendo}{\bf endo}
+\newcommand{\esp}{\hspace{0.5cm}}
+
+\newcommand{\sal}{\sum_i \mu_i}
+\newcommand{\sbet}{\sum_j \nu_j}
+\newcommand{\If}{\mbox{\bf if }}
+\newcommand{\Then}{\,\mbox{\bf then }}
+\newcommand{\titre}[1]{\title{{{\color{red} \large \bf #1}}}}
+
+% Needed for course 2. 
+\newcommand{\Zn}{{\bf Z}^n}
+\newcommand{\Z}{{\bf Z}}
+\newcommand{\N}{{\bf N}}
+\newcommand{\Np}{{\bf N}^p}
+
+\newcommand{\alfa}{\textsc{alpha}}
+\newcommand{\alfacase}{\mbox{\bf case}}
+\newcommand{\alfaesac}{\mbox{\bf esac}}
+\newcommand{\zset}{\mathbb{Z}}
+
+\newcommand{\sys}{{\bf system}}
+\newcommand{\real}{{\bf real}}
+\newcommand{\of}{{\bf of}}
+\newcommand{\lett}{{\bf let}}
+\newcommand{\tel}{{\bf tel}}
+\newcommand{\returns}{{\bf returns}}
+\newcommand{\boolean}{{\bf boolean}}
+\newcommand{\true}{{\bf true}}
+\newcommand{\false}{{\bf false}}
+
+\newcommand{\pomme}{\texttt{cmd}}
+\newcommand{\alalign}{{$\hookleftarrow$}}
+
+\newcommand{\pyth}{{\sc Python}}
+\newcommand{\prog}[1]{\alert{\texttt{#1}}}
+
+\title{Introduction à l'informatique, avec \pyth{}}
+% \author{Patrice Quinton}
+\author{Lilian Besson}
+\date{2020--2021\\Version du \today}
+
+\institute% (optional, but mostly needed)
+{ENS Rennes}
+
+\date%[\today] % (optional, should be abbreviation of conference name)
+[Info -- DEM -- 2020]{Initiation à l'informatique -- DEM -- 2020\\Module 4}
+\logo{\includegraphics[height=0.5cm]{logoENS.pdf}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+\tableofcontents[currentsection,currentsubsection,hideallsubsections]
+  \end{frame}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Outline]{}
+\frame{\tableofcontents}
+\frame
+{
+\frametitle{Résumé des épisodes précédents}
+{
+On a vu:
+  \begin{itemize}
+  \item comment accéder à l'ordinateur via son \prog{terminal}
+  \item quelques commandes simples permettant de se déplacer dans la \prog{hiérarchie des fichiers}
+  \item comment démarrer \pyth{}
+  \item comment écrire un programme avec l'éditeur \prog{idle}
+  \item les \prog{variables}, leur \prog{type}, la boucle \prog{while}, l'affectation etc.
+  \item les \prog{conditions} et instructions conditionnelles
+  \item les \prog{listes}
+  \end{itemize}
+La suite:
+  \begin{itemize}
+  \item Définir des \prog{fonctions}
+  \item Préparer un petit projet
+  \end{itemize}
+}
+}
+
+\section{Les fonctions}
+\frame
+{
+\frametitle{Fonctions}
+{\footnotesize
+\begin{block}{Définir une fonction}\mypause{}
+Jusqu'ici, \pyth{} n'était pour nous qu'une calculette
+pas nécessairement facile à utiliser. \mypause{}
+\begin{itemize}
+\item Dans votre fenêtre éditeur (\prog{idle})\mypause{}
+\item Menu \prog{File}, commande \prog{New file}.
+Le résultat est une nouvelle fenêtre, appelée \prog{untitled}.\mypause{}
+\item Dans cette fenêtre, on va taper des lignes de \pyth{}, permettant de fabriquer une
+\alert{\em fonction}\mypause{}
+\item Tapez \prog{def mafonction(x,y):}, puis \alalign{}\mypause{}
+\item Tapez \prog{return(x + 2*y + 5)}, puis \alalign{}\mypause{}
+\item \alert{Sauvegardez} ce programme en lui donnant le nom de fichier \prog{mafonction}\mypause{}
+\item Vérifier cette fonction avec la commande \texttt{Check} puis, lorsque c'est bon,
+utilisez la commande \texttt{Run module}
+\end{itemize}
+\end{block}
+}
+}
+
+\frame
+{
+\frametitle{Fonctions}
+{\footnotesize
+\begin{block}{Utiliser une fonction}
+Que se passe-t-il ?\mypause{}
+\begin{itemize}
+\item Au début, pas grand-chose. Vous remarquerez que \pyth{} a été relancé.\mypause{}
+\item Mais tapez \prog{mafonction(2,3)} et \alalign{}\mypause{}
+\item Vous devez obtenir un résultat!\mypause{}
+\item L'\alert{environnement} de \pyth{} s'est enrichi d'une nouvelle fonction\mypause{}
+\item Tapez \prog{type(mafonction)}: \pyth{} vous dit que \texttt{mafonction}
+est un objet de type \prog{'function'}, c'est-à-dire, une fonction\mypause{}
+\item Utilisez votre fonction avec diverses valeurs\mypause{}
+\item Notez que si vous redémarrez \pyth{} (comment faire?), il ne connaîtra pas 
+votre fonction, sauf si vous utilisez \prog{Run module}\mypause{}
+\end{itemize}
+\end{block}
+}
+}
+
+\frame{
+\frametitle{Le format d'une fonction}
+{\footnotesize
+\begin{block}{Eléments de base}\mypause{}
+\begin{itemize}
+\item \prog{def nom ( x, y, z... ):} C'est la \alert{{\em signature de la fonction}}, 
+avec son nom et ses paramètres (ou ses arguments). \mypause{}
+\item La définition de la fonction apparaît ensuite, sur plusieurs lignes {\em décalées}
+par une tabulation (on dit aussi {\em indentées}). \mypause{}
+\item Ces lignes indentées forment \alert{{\em le corps}} de la fonction, qui 
+forme aussi ce qu'on appelle \alert{{\em un bloc}}\mypause{}
+\item On peut y définir autant de variables que l'on veut: ces variables
+sont \alert{privées} au bloc: en dehors du bloc, elles n'existent plus\mypause{}
+\item On peut associer à une fonction une \alert{{\em aide en ligne}}\mypause{}
+\item On peut utiliser des commentaires, qui commencent par le caractère \prog{\#}
+\end{itemize}
+\end{block}
+}
+}
+
+\frame{
+\frametitle{Exemple}
+{\footnotesize
+%\begin{block}{Exemple}
+\alert{\verbatiminput{../Programmes-python/ex1.py}}
+%\end{block}
+}
+}
+
+\frame
+{
+\frametitle{Quelques remarques}
+{\footnotesize
+\begin{block}{D'une fenêtre à l'autre}\mypause{}
+\begin{itemize}
+\item
+Vous travaillez sans doute avec trois fenêtres simultanément: l'éditeur \prog{idle},
+une fenêtre \pyth{}, et votre terminal.\mypause{}
+\item
+Avec l'éditeur, ce que vous tapez peut être sauvegardé dans un fichier 
+dont vous avez choisi le nom, par exemple, \prog{monProgramme.py}.
+Ayez le réflexe de sauvegarder votre programme très très souvent (à chaque fois
+que vous avez tapé quelques lignes), en utilisant le raccourci (en général, \prog{cmd S}).\mypause{}
+\item
+Lorsque vous voulez exécuter votre programme, sauvegardez-le, puis activez
+la commande \prog{Run module}: elle vous place dans la fenêtre \pyth{}, relance
+l'interpréteur (qui oublie alors ce qui avait été fait précédemment).\mypause{}
+\item
+Dans le fenêtre \prog{pyth}, vous pouvez aussi taper directement des 
+fragments de programme, par exemple, pour bien comprendre ce que 
+fait une instruction. 
+\end{itemize}
+\end{block}
+}
+}
+
+\frame
+{
+\frametitle{Quelques remarques}
+{\footnotesize
+\begin{block}{Aide en ligne, apprentissage}\mypause{}
+\begin{itemize}
+\item Les notions essentielles à la programmation -- variables, conditions, fonctions, entiers, algorithmes, etc. --
+sont \alert{\em indépendantes} du langage de programmation que l'on utilise.\mypause{}
+\item Elles sont \alert{\em peu nombreuses}.\mypause{}
+\item Les fonctions que \pyth{} met à votre disposition sont nombreuses. Vous pouvez y accéder
+grâce à l'aide en ligne (menu \prog{help}). C'est intéressant, mais assez chronophage.\mypause{}
+\item Les librairies disponibles pour les principaux langages de programmation sont \alert{\em immenses}.
+C'est le cas pour \pyth{} et cela fait son intérêt: des modules entiers sont développés et deviennent
+accessibles gratuitement (logiciel libre).\mypause{}
+\item Lorsqu'on veut réaliser une application significative, on commence par rechercher les 
+librairies dont on pourrait déjà bénéficier. \mypause{}
+\item À la fin de cette petite initiation, vous serez en mesure de développer, avec de la pratique, 
+des programmes en \pyth{}. 
+\end{itemize}
+\end{block}
+}
+}
+
+\frame{
+\frametitle{Exercice M4-1}
+{\footnotesize
+\begin{block}{Faire}
+  Reprendre le programme qui calcule la somme des éléments d'une liste, et
+  le transformer en une fonction.
+\end{block}
+
+\begin{block}{Rappel}
+\prog{
+\verbatiminput{../../Cours-3/Programmes-Python/M3-4.py}
+}
+
+\end{block}
+}
+}
+
+\frame{
+\frametitle{Exercice M4-1}
+{\footnotesize
+\begin{block}{Faire}
+  Reprendre le programme qui calcule la somme des éléments d'une liste, et
+  le transformer en une fonction.
+\end{block}
+
+\begin{block}{Solution}
+\prog{
+\verbatiminput{../Programmes-Python/M4-1.py}
+}
+
+\end{block}
+}
+}
+
+
+\frame{
+\frametitle{En résumé}
+\begin{itemize}
+\item On a vu \alert{comment préparer un programme \pyth{}}
+\item Comment en \alert{vérifier la syntaxe} (\texttt{check})
+\item Comment le \alert{sauvegarder}
+\item Comment lancer son \alert{exécution}
+\item Comment utiliser des \alert{entiers}, des \alert{listes d'entiers}
+\item Comment définir des \alert{fonctions}
+\end{itemize}
+
+}
+
+\end{document}
