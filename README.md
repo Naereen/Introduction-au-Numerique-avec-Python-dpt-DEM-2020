@@ -40,7 +40,7 @@ contributions, machine de Turing notamment, prix Turing, etc)
 - **cours actuel** CM4 : [slides](2020-DEM-Cours-4.pdf)
 - « Petite histoire » CM4 : **Margaret Hamilton***, cheffe programmeuse de la mission Apollo (avec la fameuse photo où elle pose à côté de 20 énormes livres montrant tout le code assembleur produit par son équipe en 1969)
 
-### CM5 : mini-projet 1/2
+### CM5 : mini-projet 1/2
 
 - (pas encore) CM5 : [slides](2020-DEM-Cours-5.pdf)
 - « Petite histoire » CM5 : **Katie Bouman**, 50 ans plus tard, une des chercheuses ayant participé à la mission qui a produit la première image d'un trou noir (avec deux fameuses photos, l'une elle est contente devant son notebook Python (avec Jupyter
