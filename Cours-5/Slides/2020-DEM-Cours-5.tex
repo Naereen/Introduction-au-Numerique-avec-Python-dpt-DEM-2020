@@ -161,7 +161,7 @@ On a vu:
   \item les \prog{variables}, leur \prog{type} (\prog{int}, \prog{float}, \prog{bool}, \prog{str}), l'affectation,
   \item les \prog{conditions} et instructions conditionnelles
   \item la boucle \prog{while},
-  \item les chaînes de caractères (\prog{str} et les )\prog{listes},
+  \item les chaînes de caractères (\prog{str}) et les \prog{listes},
   \item les fonctions.
 \end{itemize}
 }
@@ -175,7 +175,7 @@ On a vu:
 
 J'aimerai vous faire programmer une fonction qui implémente un algorithme de calcul approchée de $\sqrt{x}$, selon la méthode dite des Babyloniens (cf CM1).
 
-{\footnotesize
+% {\footnotesize
 \begin{block}{A faire}
 \begin{itemize}
 \item Par binômes, suivez les instructions données dans le document,
@@ -184,7 +184,24 @@ J'aimerai vous faire programmer une fonction qui implémente un algorithme de ca
 \item Quand vous aurez fini pour $\sqrt{x}$, essayez de faire pareil pour $\exp(x)$ et $\cos(x)$ ou $\sin(x)$ (les instructions sont dans la suite du document).
 \end{itemize}
 \end{block}
+% }
 }
+\frame
+{
+\frametitle{Algorithme pour calculer une valeur approchée de $\sqrt{x}$}
+
+But : écrire une \prog{fonction} qui prend en argument un $x > 0$, et qui calcule une (bonne) approximation de $\sqrt{x}$.
+
+% {\footnotesize
+\begin{block}{Algorithme}
+\begin{itemize}
+\item On peut commencer par trouver $x_0$ l'entier le plus proche de $\sqrt{x}$, par une boucle \prog{while},
+\item Puis itérer quelques étapes (prendre $N=10$ étapes suffira !) de la suite récurrente suivante :
+  $$x_{n+1} = (x_n + x/x_n) / 2$$
+\item Au bout d'un petit nombre d'étapes, $x_n$ doit être très proche de l'objectif $\sqrt{x}$ (on peut vérifier ça en calculant \prog{abs(xn**2 - x)}).
+\end{itemize}
+\end{block}
+% }
 }
 
 
@@ -389,15 +406,18 @@ J'aimerai vous faire programmer une fonction qui implémente un algorithme de ca
 \frame
 {
 \frametitle{Katie Bouman : un exemple de \textit{success story} entre \textit{data science} et astronomie}
-% {\footnotesize
+{\footnotesize
+% \vspace*{5pt}
+\begin{figure}
+  \includegraphics[height=100pt]{katie_bouman.jpg}
+\end{figure}
 \begin{itemize}
-\item Née aux USA en XXX.
-\item TODO
-\item TODO
-\item TODO
-\item TODO
+  \item Née aux USA en 1989, doctorante au MIT jusqu'en 2017,
+  \item À partir de 2016, elle est responsable au MIT d'un algorithme de reconstitution de la première image d'un trou noir, traitant quatre petaoctets (1000 tera octets, 1 million de Giga octets) de données collectés par huit radiotélescopes dans le monde.
+  % \item Spécialiste en traitement de l'image, elle est connue pour sa contribution à la production de la première visualisation d'un trou noir à partir des données de l'Event Horizon Telescope,
+  \item Désormais enseignante-chercheuse au California Institute of Technology (Caltech).
 \end{itemize}
-% }
+}
 }
 
 \frame
@@ -406,11 +426,11 @@ J'aimerai vous faire programmer une fonction qui implémente un algorithme de ca
 {\footnotesize
 % \vspace*{5pt}
 \begin{figure}
-  \includegraphics[height=150pt]{katie_bouman.jpg}
+  \includegraphics[height=125pt]{katie_bouman_harddrive.jpg}
 \end{figure}
 \begin{itemize}
-  \item Énorme volume utilisé pour stocker les données !
-  \item A mettre en parallèle avec la précédente ``petite histoire'' parlant de Margaret Hamilton.
+  \item Petit volume de code, mais énormes puissance de calcul et volume utilisé pour stocker les données !
+  \item A mettre en parallèle avec la précédente ``petite histoire'' parlant de Margaret Hamilton (gros volume de code, très faibles puissance de calcul et volume de données).
   % https://www.lemonde.fr/sciences/article/2019/04/12/katie-bouman-la-traqueuse-de-trou-noir-propulsee-malgre-elle-superstar-des-femmes-de-science_5449542_1650684.html
 \end{itemize}
 }
@@ -421,13 +441,16 @@ J'aimerai vous faire programmer une fonction qui implémente un algorithme de ca
 
 \frame{
 \frametitle{En résumé}
+Dans ce cours...
 \begin{itemize}
-\item On a vu \alert{comment préparer un programme \pyth{}}
-\item Comment en \alert{vérifier la syntaxe} (\texttt{check})
-\item Comment le \alert{sauvegarder}
-\item Comment lancer son \alert{exécution}
-\item Comment utiliser des \alert{entiers}, des \alert{flottants}, des \alert{chaînes} de caractères, des \alert{listes},
-\item Comment définir et utiliser des \alert{fonctions}
+\item On a vu une introduction à la manipulation du terminal de votre ordinateur,
+\item On a vu \alert{comment écrire un programme \pyth{}}
+% \item Comment en \alert{vérifier la syntaxe} (\texttt{check})
+\item Comment le \alert{sauvegarder} et lancer son \alert{exécution}
+\item Comment utiliser des \alert{entiers}, des \alert{flottants}, des \alert{booléens},
+\item mais aussi des \alert{chaînes} de caractères, des \alert{listes},
+\item Et des tests conditionnels \alert{if/else/elif} et des boucles \alert{while},
+\item Comment définir et utiliser des \alert{fonctions}.
 \end{itemize}
 }
 
@@ -435,16 +458,15 @@ J'aimerai vous faire programmer une fonction qui implémente un algorithme de ca
 \frametitle{Devoir maison à faire pour conclure le cours}
 Si vous voulez travailler encore un peu le cours, essayez de programmer l'``algorithme de la crêpière'' vu au premier cours CM1.
 
-Une solution commentée est disponible sur le site du cours.
-\url{https://perso.crans.org/besson/teach/intro_num_DEM_2020/2020-DEM/}
+Une solution commentée sera disponible sur le site du cours.
+\url{https://perso.crans.org/besson/teach/intro_num_DEM_2020/crepe/}
 }
 
 \frame{
-\frametitle{Conclusion : ``take home message'' du cours}
-Si vous voulez travailler encore un peu le cours, essayez de programmer l'``algorithme de la crêpière'' vu au premier cours CM1.
+\frametitle{Conclusion : ``take home messages'' du cours}
 
-Une solution commentée est disponible sur le site du cours.
-\url{https://perso.crans.org/besson/teach/intro_num_DEM_2020/2020-DEM/}
+A l'oral ensemble...
+
 }
 
 \end{document}
