@@ -52,3 +52,9 @@ part et d'autre de la planète).
 - (pas encore) CM6 : [slides](2020-DEM-Cours-6.pdf)
 - **Auto-évaluation : révisez un peu les 5 cours précédents avant de venir**
 - « Petite histoire » CM6 : pas de petite histoire, conclusion du cours
+
+---
+
+## Auteurs
+- Patrice Quinton (ENS Rennes), 2017-2020 ;
+- Lilian Besson (ENS Rennes), 2020.
